@@ -1,0 +1,333 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI_Idosos.uss?fileID=7433441132597879392&amp;guid=19c0705fb38f802448d7122d9c0994f5&amp;type=3#UI_Idosos"/>
+    <ui:VisualElement name="app-root" class="app-root version-a text-md">
+        <ui:VisualElement name="screen-loading" class="screen active center" style="display: none; top: -2px; bottom: 3px; right: 0; left: 0;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
+            <ui:Label name="game-title" text="Super&#10;Market" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.otf?fileID=12800000&amp;guid=43a78b2696720b24991aacaccdafabcd&amp;type=3#Starborn&quot;); -unity-text-outline-width: 7px; -unity-text-outline-color: rgb(106, 149, 0);"/>
+            <ui:Label text="Abrindo o mercado. Aguarde um momento." class="body" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice-Clean.ttf?fileID=12800000&amp;guid=00df718a1d3591542bd313bd741ae741&amp;type=3#MilkyNice-Clean&quot;);"/>
+            <ui:VisualElement class="progress-track">
+                <ui:VisualElement name="progress-fill" class="progress-fill"/>
+            </ui:VisualElement>
+            <ui:Label name="loading-percent" text="0%" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice-Clean.ttf?fileID=12800000&amp;guid=00df718a1d3591542bd313bd741ae741&amp;type=3#MilkyNice-Clean&quot;);"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-menu" class="screen" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label name="menu-greeting" text="Bom dia, Jogador!" class="topbar-greeting" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="chips">
+                <ui:VisualElement class="chip">
+                    <ui:VisualElement picking-mode="Ignore" class="dot dot-coin"/>
+                    <ui:Label text="Moedas" class="chip-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="menu-coins" text="120" class="chip-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="chip">
+                    <ui:VisualElement picking-mode="Ignore" class="dot dot-customer"/>
+                    <ui:Label text="Clientes" class="chip-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="menu-customers" text="0" class="chip-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="content center">
+                <ui:Label text="Super&#10;market" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                <ui:Label text="Seu dia de trabalho no mercado" class="tagline" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-play" text="TRABALHAR" class="btn btn-primary btn-block btn-cta" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="tabbar">
+                <ui:Button name="btn-market" text="Loja" class="btn btn-tab" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-profile" text="Crachá" class="btn btn-tab" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-settings" text="Ajustes" class="btn btn-tab" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-profile" class="screen" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label text="Meu crachá" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement class="card">
+                    <ui:Label text="EQUIPE DO MERCADO" class="ribbon" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:VisualElement class="avatar">
+                        <ui:Label name="avatar-letter" text="J" class="avatar-letter"/>
+                    </ui:VisualElement>
+                    <ui:Label name="profile-name" text="Jogador" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="profile-role" text="Atendente em treinamento" class="body strong" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=1c49fded3583e0440878419fb4c2cc28&amp;type=3#NotInter-Regular&quot;);"/>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Moedas" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label name="profile-coins" text="120" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Clientes atendidos" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label name="profile-customers" text="0" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row only-a">
+                        <ui:Label text="Dias concluídos" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label name="profile-levels" text="0 de 6" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-back-profile" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-settings" class="screen" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label text="Ajustes" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement class="card" style="align-items: stretch;">
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Sons do mercado" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Button name="btn-toggle-sound" text="Ligado" class="btn btn-toggle toggle-on" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Música ambiente" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Button name="btn-toggle-music" text="Ligada" class="btn btn-toggle toggle-on" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-block">
+                        <ui:Label text="Tamanho do texto" class="setting-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:VisualElement class="seg" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);">
+                            <ui:Button name="btn-text-md" text="Normal" class="btn selected" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                            <ui:Button name="btn-text-lg" text="Grande" class="btn btn-ghost" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                            <ui:Button name="btn-text-xl" text="Enorme" class="btn btn-ghost"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Button name="btn-quit" text="Sair do jogo" class="btn btn-danger btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-back-settings" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-market" class="screen" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label text="Loja do funcionário" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="chips">
+                <ui:VisualElement class="chip">
+                    <ui:VisualElement picking-mode="Ignore" class="dot dot-coin"/>
+                    <ui:Label text="Moedas" class="chip-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="market-coins" text="120" class="chip-label"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement class="card market-item">
+                    <ui:VisualElement class="market-info">
+                        <ui:Label name="item-1-name" text="Calculadora" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label name="item-1-desc" text="Ajuda a conferir as contas no caixa." class="body"/>
+                        <ui:Label name="item-1-price" text="30 moedas" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-buy-1" text="Comprar" class="btn btn-primary btn-buy" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="card market-item">
+                    <ui:VisualElement class="market-info">
+                        <ui:Label name="item-2-name" text="Avental novo" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label name="item-2-desc" text="Um uniforme limpinho para o seu turno." class="body"/>
+                        <ui:Label name="item-2-price" text="50 moedas" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-buy-2" text="Comprar" class="btn btn-primary btn-buy" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="card market-item">
+                    <ui:VisualElement class="market-info">
+                        <ui:Label name="item-3-name" text="Crachá dourado" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;); width: 610px;"/>
+                        <ui:Label name="item-3-desc" text="Mostra que você é funcionário destaque." class="body"/>
+                        <ui:Label name="item-3-price" text="80 moedas" class="price" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-buy-3" text="Comprar" class="btn btn-primary btn-buy" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+                <ui:Label name="market-message" text="" class="body strong"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-back-market" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-levels" class="screen only-a" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label text="Escolha o dia de trabalho" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement class="grid">
+                    <ui:Button name="level-1" class="btn level-card level-done">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="1" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Concluído" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                    <ui:Button name="level-2" class="btn level-card level-done">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="2" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Concluído" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                    <ui:Button name="level-3" class="btn level-card level-open">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="3" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Disponível" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                    <ui:Button name="level-4" enabled="false" class="btn level-card level-locked">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="4" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Bloqueado" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                    <ui:Button name="level-5" enabled="false" class="btn level-card level-locked">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="5" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Bloqueado" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                    <ui:Button name="level-6" enabled="false" class="btn level-card level-locked">
+                        <ui:Label text="Dia" picking-mode="Ignore" class="level-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="6" picking-mode="Ignore" class="level-number" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.ttf?fileID=12800000&amp;guid=d1a97d5085a81804f8b4f3db3dde53bf&amp;type=3#Starborn&quot;);"/>
+                        <ui:Label text="Bloqueado" picking-mode="Ignore" class="level-status" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:Button>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-back-levels" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-level-info" class="screen only-a" style="display: none;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
+            <ui:VisualElement class="topbar">
+                <ui:Label name="level-info-title" text="Dia 1 de trabalho" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="content">
+                <ui:VisualElement class="card">
+                    <ui:Label text="Seu turno de hoje" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="level-info-desc" text="Descrição do turno em uma ou duas frases curtas." class="body"/>
+                    <ui:Label text="Seus postos de trabalho:" class="body strong" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;); -unity-font-style: normal;"/>
+                    <ui:VisualElement class="row" style="flex-wrap: wrap; -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);">
+                        <ui:Label text="Caixa" class="pill" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="Balança" class="pill" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Label text="Etiquetas" class="pill"/>
+                    </ui:VisualElement>
+                    <ui:Label text="Sem pressa: os clientes esperam com calma." class="body" style="-unity-font-style: bold-and-italic;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-start-level" text="COMEÇAR TURNO" class="btn btn-primary btn-block btn-cta" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;); -unity-font-style: bold;"/>
+                <ui:Button name="btn-back-level-info" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-game" class="screen" style="display: none;">
+            <ui:VisualElement class="hud">
+                <ui:Button name="btn-pause" text="| |" class="btn btn-ghost btn-pause" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:VisualElement class="chip">
+                    <ui:VisualElement picking-mode="Ignore" class="dot dot-coin"/>
+                    <ui:Label text="Moedas" class="chip-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="hud-coins" text="120" class="chip-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="chip">
+                    <ui:VisualElement picking-mode="Ignore" class="dot dot-customer"/>
+                    <ui:Label text="Clientes" class="chip-caption" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="hud-customers" text="0" class="chip-label" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="sign">
+                <ui:Label name="game-instruction" text="Cliente 1 de 3 (Caixa). Toque no valor certo." class="instruction" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="game-area" class="game-area">
+                <ui:VisualElement name="minigame-money" class="minigame active">
+                    <ui:Label text="Caixa" class="ribbon" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="money-question" text="O cliente pagou R$ 20,00 e a compra deu R$ 13,00. Qual é o troco?" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:VisualElement class="answers">
+                        <ui:Button name="money-answer-1" text="R$ 6,00" class="btn btn-answer" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Button name="money-answer-2" text="R$ 7,00" class="btn btn-answer" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                        <ui:Button name="money-answer-3" text="R$ 8,00" class="btn btn-answer" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="minigame-code" class="minigame">
+                    <ui:Label text="Balança" class="ribbon"/>
+                    <ui:VisualElement class="slots">
+                        <ui:Label name="code-slot-1" text="" class="slot"/>
+                        <ui:Label name="code-slot-2" text="" class="slot"/>
+                        <ui:Label name="code-slot-3" text="" class="slot"/>
+                        <ui:Label name="code-slot-4" text="" class="slot"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="keypad">
+                        <ui:Button name="key-1" text="1" class="btn key"/>
+                        <ui:Button name="key-2" text="2" class="btn key"/>
+                        <ui:Button name="key-3" text="3" class="btn key"/>
+                        <ui:Button name="key-4" text="4" class="btn key"/>
+                        <ui:Button name="key-5" text="5" class="btn key"/>
+                        <ui:Button name="key-6" text="6" class="btn key"/>
+                        <ui:Button name="key-7" text="7" class="btn key"/>
+                        <ui:Button name="key-8" text="8" class="btn key"/>
+                        <ui:Button name="key-9" text="9" class="btn key"/>
+                        <ui:Button name="key-erase" text="Apagar" class="btn btn-danger key"/>
+                        <ui:Button name="key-0" text="0" class="btn key"/>
+                        <ui:Button name="key-ok" text="OK" class="btn btn-primary key"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="minigame-words" class="minigame">
+                    <ui:Label text="Etiquetas" class="ribbon"/>
+                    <ui:Label name="words-hint" text="Dica: vêm da galinha" class="body"/>
+                    <ui:VisualElement class="slots">
+                        <ui:Label name="word-slot-1" text="" class="slot"/>
+                        <ui:Label name="word-slot-2" text="" class="slot"/>
+                        <ui:Label name="word-slot-3" text="" class="slot"/>
+                        <ui:Label name="word-slot-4" text="" class="slot"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tiles">
+                        <ui:Button name="tile-1" text="O" class="btn tile"/>
+                        <ui:Button name="tile-2" text="S" class="btn tile"/>
+                        <ui:Button name="tile-3" text="V" class="btn tile"/>
+                        <ui:Button name="tile-4" text="O" class="btn tile"/>
+                    </ui:VisualElement>
+                    <ui:Button name="words-erase" text="Apagar" class="btn btn-danger btn-block"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label name="game-feedback" text="Cliente satisfeito!" class="feedback feedback-ok"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-result" class="screen" style="display: flex;">
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
+            <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
+            <ui:VisualElement class="content center">
+                <ui:Label name="result-title" text="Turno concluído!" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:VisualElement class="card stretch">
+                    <ui:Label name="result-stars" text="Avaliação dos clientes: 3 de 3 estrelas" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                    <ui:Label name="result-coins" text="Você recebeu 30 moedas pelo turno" class="body strong"/>
+                    <ui:Label name="result-customers" text="Clientes atendidos: 3" class="body strong"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="bottombar">
+                <ui:Button name="btn-again" text="Trabalhar de novo" class="btn btn-primary btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-next-level" text="Próximo dia" class="btn btn-block only-a" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-result-menu" text="Voltar ao menu" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" class="awning" style="display: flex;">
+            <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="awning-stripe as-red"/>
+            <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="awning-stripe as-pale"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
+            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="overlay-pause" class="overlay" style="display: none;">
+            <ui:VisualElement class="dialog">
+                <ui:VisualElement class="sheet-handle"/>
+                <ui:Label text="Turno pausado" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-resume" text="Continuar o turno" class="btn btn-primary btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-restart" text="Recomeçar o turno" class="btn btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-to-levels" text="Escolher outro dia" class="btn btn-ghost btn-block only-a" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-to-menu" text="Voltar ao menu" class="btn btn-ghost btn-block only-b"/>
+                <ui:Button name="btn-quit-game" text="Sair do jogo" class="btn btn-danger btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="overlay-quit" class="overlay" style="display: none;">
+            <ui:VisualElement class="dialog">
+                <ui:VisualElement class="sheet-handle"/>
+                <ui:Label text="Deseja mesmo sair?" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Label text="Seu progresso até aqui fica salvo." class="body"/>
+                <ui:Button name="btn-quit-no" text="Não, continuar" class="btn btn-primary btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+                <ui:Button name="btn-quit-yes" text="Sim, sair" class="btn btn-danger btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

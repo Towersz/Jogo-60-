@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1107.6 295.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Gradiente_sem_nome_75);
+      }
+
+      .cls-2 {
+        fill: url(#Gradiente_sem_nome_26-4);
+      }
+
+      .cls-3 {
+        fill: url(#Gradiente_sem_nome_26-11);
+      }
+
+      .cls-4 {
+        fill: url(#Gradiente_sem_nome_75-6);
+      }
+
+      .cls-5 {
+        fill: url(#Gradiente_sem_nome_75-3);
+      }
+
+      .cls-6 {
+        fill: #ea4a2f;
+      }
+
+      .cls-7 {
+        fill: url(#Gradiente_sem_nome_75-9);
+      }
+
+      .cls-8 {
+        fill: #ffc2b6;
+      }
+
+      .cls-9 {
+        fill: url(#Gradiente_sem_nome_75-5);
+      }
+
+      .cls-10 {
+        fill: #ff816a;
+      }
+
+      .cls-11 {
+        fill: url(#Gradiente_sem_nome_26);
+      }
+
+      .cls-12 {
+        fill: url(#Gradiente_sem_nome_75-2);
+      }
+
+      .cls-13 {
+        fill: url(#Gradiente_sem_nome_26-3);
+      }
+
+      .cls-14 {
+        fill: url(#Gradiente_sem_nome_26-6);
+      }
+
+      .cls-15 {
+        fill: url(#Gradiente_sem_nome_26-2);
+      }
+
+      .cls-16 {
+        isolation: isolate;
+      }
+
+      .cls-17 {
+        fill: url(#Gradiente_sem_nome_75-4);
+      }
+
+      .cls-18 {
+        fill: url(#Gradiente_sem_nome_26-8);
+      }
+
+      .cls-19 {
+        fill: url(#Gradiente_sem_nome_75-10);
+      }
+
+      .cls-20 {
+        fill: url(#Gradiente_sem_nome_26-9);
+      }
+
+      .cls-21 {
+        fill: url(#Gradiente_sem_nome_26-7);
+      }
+
+      .cls-22 {
+        fill: #ae2209;
+      }
+
+      .cls-23 {
+        opacity: .41;
+      }
+
+      .cls-23, .cls-24 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-25 {
+        fill: url(#Gradiente_sem_nome_26-12);
+        mix-blend-mode: soft-light;
+      }
+
+      .cls-26 {
+        fill: url(#Gradiente_sem_nome_75-11);
+      }
+
+      .cls-27 {
+        fill: url(#Gradiente_sem_nome_75-7);
+      }
+
+      .cls-28 {
+        fill: url(#Gradiente_sem_nome_26-10);
+      }
+
+      .cls-29 {
+        fill: url(#Gradiente_sem_nome_26-5);
+      }
+
+      .cls-30 {
+        fill: url(#Gradiente_sem_nome_75-8);
+      }
+
+      .cls-24 {
+        opacity: .47;
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome_26" data-name="Gradiente sem nome 26" x1="553.43" y1="294.45" x2="553.43" y2="167.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#014f86" stop-opacity="0"/>
+      <stop offset=".33" stop-color="#2a6f97"/>
+      <stop offset=".68" stop-color="#61a5c2"/>
+      <stop offset="1" stop-color="#a9d6e5"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_26-2" data-name="Gradiente sem nome 26" x1="653.82" y1="294.86" x2="653.82" y2="167.96" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-3" data-name="Gradiente sem nome 26" x1="352.53" x2="352.53" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-4" data-name="Gradiente sem nome 26" x1="453.18" y1="294.86" x2="453.18" y2="167.96" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-5" data-name="Gradiente sem nome 26" x1="151.73" x2="151.73" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-6" data-name="Gradiente sem nome 26" x1="252.25" y1="294.86" x2="252.25" y2="167.96" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-7" data-name="Gradiente sem nome 26" x1="50.52" y1="295.23" x2="50.52" y2="168.32" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-8" data-name="Gradiente sem nome 26" x1="754.53" x2="754.53" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-9" data-name="Gradiente sem nome 26" x1="855.37" y1="294.86" x2="855.37" y2="167.96" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-10" data-name="Gradiente sem nome 26" x1="955.93" x2="955.93" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_26-11" data-name="Gradiente sem nome 26" x1="1056.17" y1="294.86" x2="1056.17" y2="167.96" xlink:href="#Gradiente_sem_nome_26"/>
+    <linearGradient id="Gradiente_sem_nome_75" data-name="Gradiente sem nome 75" x1="553.2" y1="0" x2="553.2" y2="235.74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5a0e00"/>
+      <stop offset=".13" stop-color="#580e01" stop-opacity=".96"/>
+      <stop offset=".24" stop-color="#511004" stop-opacity=".85"/>
+      <stop offset=".34" stop-color="#47130a" stop-opacity=".67"/>
+      <stop offset=".43" stop-color="#391813" stop-opacity=".4"/>
+      <stop offset=".52" stop-color="#261d1d" stop-opacity=".06"/>
+      <stop offset=".53" stop-color="#231f20" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_75-2" data-name="Gradiente sem nome 75" x1="352.67" x2="352.67" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-3" data-name="Gradiente sem nome 75" x1="151.07" x2="151.07" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-4" data-name="Gradiente sem nome 75" x1="754.27" x2="754.27" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-5" data-name="Gradiente sem nome 75" x1="955.33" x2="955.33" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-6" data-name="Gradiente sem nome 75" x1="653.47" x2="653.47" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-7" data-name="Gradiente sem nome 75" x1="855.07" x2="855.07" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-8" data-name="Gradiente sem nome 75" x1="1055.6" x2="1055.6" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-9" data-name="Gradiente sem nome 75" x1="452.93" x2="452.93" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-10" data-name="Gradiente sem nome 75" x1="251.87" x2="251.87" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_75-11" data-name="Gradiente sem nome 75" x1="50.4" x2="50.4" xlink:href="#Gradiente_sem_nome_75"/>
+    <linearGradient id="Gradiente_sem_nome_26-12" data-name="Gradiente sem nome 26" x1="553.8" y1="159.53" x2="553.8" y2="233.19" xlink:href="#Gradiente_sem_nome_26"/>
+  </defs>
+  <g class="cls-16">
+    <g id="Camada_1" data-name="Camada 1">
+      <g>
+        <ellipse class="cls-22" cx="553.17" cy="230.27" rx="49.83" ry="63.45"/>
+        <ellipse class="cls-10" cx="653.55" cy="230.68" rx="50.55" ry="63.45"/>
+        <ellipse class="cls-22" cx="352.27" cy="230.27" rx="50" ry="63.45"/>
+        <ellipse class="cls-10" cx="452.92" cy="230.68" rx="50.12" ry="63.45"/>
+        <ellipse class="cls-22" cx="151.47" cy="230.27" rx="50" ry="63.45"/>
+        <ellipse class="cls-10" cx="251.98" cy="230.68" rx="50.25" ry="63.45"/>
+        <ellipse class="cls-10" cx="50.25" cy="231.05" rx="50.12" ry="63.45"/>
+        <ellipse class="cls-22" cx="754.27" cy="230.27" rx="50.33" ry="63.45"/>
+        <ellipse class="cls-10" cx="855.1" cy="230.68" rx="50.5" ry="63.45"/>
+        <ellipse class="cls-22" cx="955.67" cy="230.27" rx="49.93" ry="63.45"/>
+        <ellipse class="cls-10" cx="1055.9" cy="230.68" rx="50.3" ry="63.45"/>
+      </g>
+      <g class="cls-23">
+        <ellipse class="cls-11" cx="553.43" cy="231" rx="49.83" ry="63.45"/>
+        <ellipse class="cls-15" cx="653.82" cy="231.41" rx="50.55" ry="63.45"/>
+        <ellipse class="cls-13" cx="352.53" cy="231" rx="50" ry="63.45"/>
+        <ellipse class="cls-2" cx="453.18" cy="231.41" rx="50.12" ry="63.45"/>
+        <ellipse class="cls-29" cx="151.73" cy="231" rx="50" ry="63.45"/>
+        <ellipse class="cls-14" cx="252.25" cy="231.41" rx="50.25" ry="63.45"/>
+        <ellipse class="cls-21" cx="50.52" cy="231.78" rx="50.12" ry="63.45"/>
+        <ellipse class="cls-18" cx="754.53" cy="231" rx="50.33" ry="63.45"/>
+        <ellipse class="cls-20" cx="855.37" cy="231.41" rx="50.5" ry="63.45"/>
+        <ellipse class="cls-28" cx="955.93" cy="231" rx="49.93" ry="63.45"/>
+        <ellipse class="cls-3" cx="1056.17" cy="231.41" rx="50.3" ry="63.45"/>
+      </g>
+      <g>
+        <rect class="cls-6" x="502.8" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-6" x="302.27" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-6" x="100.67" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-6" x="703.87" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-6" x="904.93" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="603.07" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="804.67" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="1005.2" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="402.53" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="201.47" y=".53" width="100.8" height="231.93"/>
+        <rect class="cls-8" x="0" y=".53" width="100.8" height="231.93"/>
+      </g>
+      <g class="cls-24">
+        <rect class="cls-1" x="502.8" width="100.8" height="235.74"/>
+        <rect class="cls-12" x="302.27" width="100.8" height="235.74"/>
+        <rect class="cls-5" x="100.67" width="100.8" height="235.74"/>
+        <rect class="cls-17" x="703.87" width="100.8" height="235.74"/>
+        <rect class="cls-9" x="904.93" width="100.8" height="235.74"/>
+        <rect class="cls-4" x="603.07" width="100.8" height="235.74"/>
+        <rect class="cls-27" x="804.67" width="100.8" height="235.74"/>
+        <rect class="cls-30" x="1005.2" width="100.8" height="235.74"/>
+        <rect class="cls-7" x="402.53" width="100.8" height="235.74"/>
+        <rect class="cls-19" x="201.47" width="100.8" height="235.74"/>
+        <rect class="cls-26" x="0" width="100.8" height="235.74"/>
+      </g>
+      <rect class="cls-25" y="159.53" width="1107.6" height="73.66"/>
+    </g>
+  </g>
+</svg>
