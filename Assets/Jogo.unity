@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3901848715e459345906b0ddc5f42fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AppView
-  flow: 0
+  flow: 1
   onSoundChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -65,14 +65,28 @@ public class AppViewModel : INotifyBindablePropertyChanged
     static readonly string[] Products = { "a banana", "o arroz", "o feijão", "o café", "o queijo", "o tomate" };
 
     // ---------- Infraestrutura de notificação ----------
+    /// <summary>Usado pelo sistema de data binding do UI Toolkit.</summary>
     public event EventHandler<BindablePropertyChangedEventArgs> propertyChanged;
+
+    /// <summary>
+    /// Aviso simples, com o nome da propriedade em texto puro. A View usa este evento
+    /// para trocar telas e classes USS, sem depender do tipo BindingId.
+    /// </summary>
+    public event Action<string> Changed;
+
     public event Action QuitRequested;
 
     /// <summary>Preenchido pela View: executa uma ação depois de X milissegundos.</summary>
     public Action<long, Action> Delay = (ms, action) => action();
 
-    void Notify(string property) =>
+    void Notify(string property)
+    {
+        // Um erro na reação da tela é mostrado no Console, mas não trava o resto do jogo.
+        try { Changed?.Invoke(property); }
+        catch (Exception e) { Debug.LogException(e); }
+
         propertyChanged?.Invoke(this, new BindablePropertyChangedEventArgs(property));
+    }
 
     bool Set<T>(ref T field, T value, string property, params string[] dependents)
     {

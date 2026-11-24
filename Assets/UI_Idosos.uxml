@@ -1,17 +1,15 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI_Idosos.uss?fileID=7433441132597879392&amp;guid=19c0705fb38f802448d7122d9c0994f5&amp;type=3#UI_Idosos"/>
     <ui:VisualElement name="app-root" class="app-root version-a text-md">
-        <ui:VisualElement name="screen-loading" class="screen active center" style="display: none; top: -2px; bottom: 3px; right: 0; left: 0;">
-            <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
-            <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
-            <ui:Label name="game-title" text="Super&#10;Market" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.otf?fileID=12800000&amp;guid=43a78b2696720b24991aacaccdafabcd&amp;type=3#Starborn&quot;); -unity-text-outline-width: 7px; -unity-text-outline-color: rgb(106, 149, 0);"/>
+        <ui:VisualElement name="screen-loading" class="screen active center" style="top: -2px; bottom: 3px; right: 0; left: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%201.png?fileID=2800000&amp;guid=763fd2bd8eed37d42af00f13a20ff2fa&amp;type=3#wallpaper 1&quot;);">
+            <ui:Label name="game-title" text="Super&#10;Market" picking-mode="Ignore" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/starborn/Starborn.otf?fileID=12800000&amp;guid=43a78b2696720b24991aacaccdafabcd&amp;type=3#Starborn&quot;); -unity-text-outline-width: 7px; -unity-text-outline-color: rgb(106, 149, 0);"/>
             <ui:Label text="Abrindo o mercado. Aguarde um momento." class="body" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice-Clean.ttf?fileID=12800000&amp;guid=00df718a1d3591542bd313bd741ae741&amp;type=3#MilkyNice-Clean&quot;);"/>
             <ui:VisualElement class="progress-track">
                 <ui:VisualElement name="progress-fill" class="progress-fill"/>
             </ui:VisualElement>
             <ui:Label name="loading-percent" text="0%" class="subtitle" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice-Clean.ttf?fileID=12800000&amp;guid=00df718a1d3591542bd313bd741ae741&amp;type=3#MilkyNice-Clean&quot;);"/>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-menu" class="screen" style="display: none;">
+        <ui:VisualElement name="screen-menu" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
             <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
             <ui:VisualElement class="topbar">
@@ -42,7 +40,7 @@
                 <ui:Button name="btn-settings" text="Ajustes" class="btn btn-tab" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-profile" class="screen" style="display: none;">
+        <ui:VisualElement name="screen-profile" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
             <ui:VisualElement class="topbar">
                 <ui:Label text="Meu crachá" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -73,7 +71,7 @@
                 <ui:Button name="btn-back-profile" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-settings" class="screen" style="display: none;">
+        <ui:VisualElement name="screen-settings" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
             <ui:VisualElement class="topbar">
                 <ui:Label text="Ajustes" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -103,7 +101,7 @@
                 <ui:Button name="btn-back-settings" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-market" class="screen" style="display: none;">
+        <ui:VisualElement name="screen-market" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
             <ui:VisualElement class="topbar">
                 <ui:Label text="Loja do funcionário" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -146,7 +144,7 @@
                 <ui:Button name="btn-back-market" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-levels" class="screen only-a" style="display: none;">
+        <ui:VisualElement name="screen-levels" class="screen only-a" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-3"/>
             <ui:VisualElement class="topbar">
                 <ui:Label text="Escolha o dia de trabalho" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -189,7 +187,7 @@
                 <ui:Button name="btn-back-levels" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-level-info" class="screen only-a" style="display: none;">
+        <ui:VisualElement name="screen-level-info" class="screen only-a" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
             <ui:VisualElement class="topbar">
                 <ui:Label name="level-info-title" text="Dia 1 de trabalho" class="topbar-title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -212,7 +210,7 @@
                 <ui:Button name="btn-back-level-info" text="Voltar" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-game" class="screen" style="display: none;">
+        <ui:VisualElement name="screen-game" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement class="hud">
                 <ui:Button name="btn-pause" text="| |" class="btn btn-ghost btn-pause" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
                 <ui:VisualElement class="chip">
@@ -282,7 +280,7 @@
             </ui:VisualElement>
             <ui:Label name="game-feedback" text="Cliente satisfeito!" class="feedback feedback-ok"/>
         </ui:VisualElement>
-        <ui:VisualElement name="screen-result" class="screen" style="display: flex;">
+        <ui:VisualElement name="screen-result" class="screen" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement picking-mode="Ignore" class="deco deco-1"/>
             <ui:VisualElement picking-mode="Ignore" class="deco deco-2"/>
             <ui:VisualElement class="content center">
@@ -299,17 +297,8 @@
                 <ui:Button name="btn-result-menu" text="Voltar ao menu" class="btn btn-ghost btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement picking-mode="Ignore" class="awning" style="display: flex;">
-            <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="awning-stripe as-red"/>
-            <ui:VisualElement picking-mode="Ignore" name="VisualElement" class="awning-stripe as-pale"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-red"/>
-            <ui:VisualElement picking-mode="Ignore" class="awning-stripe as-pale"/>
-        </ui:VisualElement>
-        <ui:VisualElement name="overlay-pause" class="overlay" style="display: none;">
+        <ui:VisualElement picking-mode="Ignore" class="awning" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/tenda.png?fileID=2800000&amp;guid=723f94b50f89f3945ac7ccb06e396c2f&amp;type=3#tenda&quot;);"/>
+        <ui:VisualElement name="overlay-pause" class="overlay" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement class="dialog">
                 <ui:VisualElement class="sheet-handle"/>
                 <ui:Label text="Turno pausado" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
@@ -320,7 +309,7 @@
                 <ui:Button name="btn-quit-game" text="Sair do jogo" class="btn btn-danger btn-block" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="overlay-quit" class="overlay" style="display: none;">
+        <ui:VisualElement name="overlay-quit" class="overlay" style="background-image: url(&quot;project://database/Assets/UI%20Toolkit/assets/wallpaper%202.png?fileID=2800000&amp;guid=987c51f6c19ab60438d16b3ea250a7a7&amp;type=3#wallpaper 2&quot;);">
             <ui:VisualElement class="dialog">
                 <ui:VisualElement class="sheet-handle"/>
                 <ui:Label text="Deseja mesmo sair?" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/Fontes/MilkyNice/MilkyNice.otf?fileID=12800000&amp;guid=3a3b908862186e04e99c4053d27793d8&amp;type=3#MilkyNice&quot;);"/>

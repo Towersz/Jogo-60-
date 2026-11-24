@@ -9,8 +9,8 @@ using UnityEngine.UIElements;
 // AppView.cs
 // Liga o UXML (UI_Idosos.uxml) ao AppViewModel (jogo de funcionário de mercado).
 //  - Textos, largura da barra e valores: DATA BINDING (SetBinding).
-//  - Troca de telas, classes USS e botões ativos/inativos: reação ao
-//    evento propertyChanged do ViewModel (classes não são bindáveis).
+//  - Troca de telas, painéis e classes USS, e botões ativos/inativos: reação ao
+//    evento Changed do ViewModel (classes não são bindáveis).
 //  - Cliques: Button.clicked chama métodos do ViewModel.
 // Requer Unity 6 (6000.0) ou superior.
 // =====================================================================
@@ -60,36 +60,53 @@ public class AppView : MonoBehaviour
     // =====================================================================
     void OnEnable()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-        _app = root.Q("app-root");
-        if (_app == null)
+        var doc = GetComponent<UIDocument>();
+        if (doc.visualTreeAsset == null)
         {
-            Debug.LogError("Elemento 'app-root' não encontrado. Confira o UXML no UIDocument.");
+            Debug.LogError("UIDocument sem 'Source Asset'. Arraste o UI_Idosos.uxml para esse campo.");
             return;
         }
 
-        _vm = new AppViewModel(flow);
-        _vm.Delay = (ms, action) => _app.schedule.Execute(action).StartingIn(ms);
-        _vm.QuitRequested += QuitApplication;
-        _vm.propertyChanged += OnViewModelChanged;
+        var root = doc.rootVisualElement;
+        _app = root.Q("app-root");
+        if (_app == null)
+        {
+            Debug.LogError("Elemento 'app-root' não encontrado. O UXML pode ter falhado ao importar: veja o primeiro erro vermelho no Console.");
+            return;
+        }
 
-        // O data source é herdado por todos os elementos filhos.
-        _app.dataSource = _vm;
+        try
+        {
+            _vm = new AppViewModel(flow);
+            _vm.Delay = (ms, action) => _app.schedule.Execute(action).StartingIn(ms);
+            _vm.QuitRequested += QuitApplication;
+            _vm.Changed += OnViewModelChanged;
 
-        _app.EnableInClassList("version-a", flow == FlowVersion.A);
-        _app.EnableInClassList("version-b", flow == FlowVersion.B);
+            // O data source é herdado por todos os elementos filhos.
+            _app.dataSource = _vm;
 
-        CreateBindings();
-        WireButtons();
-        ApplyEverything();
-        StartLoading();
+            _app.EnableInClassList("version-a", flow == FlowVersion.A);
+            _app.EnableInClassList("version-b", flow == FlowVersion.B);
+
+            CreateBindings();
+            WireButtons();
+            ApplyEverything();
+            StartLoading();
+            Debug.Log("[AppView] Interface iniciada.");
+        }
+        catch (Exception e)
+        {
+            // Mostra exatamente em qual passo a interface falhou.
+            Debug.LogError("Falha ao iniciar a interface (veja a exceção abaixo).");
+            Debug.LogException(e);
+        }
     }
 
     void OnDisable()
     {
         if (_vm == null) return;
         _vm.QuitRequested -= QuitApplication;
-        _vm.propertyChanged -= OnViewModelChanged;
+        _vm.Changed -= OnViewModelChanged;
         _vm.Save();
     }
 
@@ -295,9 +312,9 @@ public class AppView : MonoBehaviour
     // =====================================================================
     // 3. REAÇÕES A MUDANÇAS (classes USS, foco, botões ativos)
     // =====================================================================
-    void OnViewModelChanged(object sender, BindablePropertyChangedEventArgs e)
+    void OnViewModelChanged(string property)
     {
-        switch (e.propertyName.ToString())
+        switch (property)
         {
             case nameof(AppViewModel.Screen): ApplyScreen(); break;
             case nameof(AppViewModel.Overlay): ApplyOverlay(); break;
@@ -327,10 +344,22 @@ public class AppView : MonoBehaviour
         onMusicChanged?.Invoke(_vm.MusicOn);
     }
 
+    /// <summary>
+    /// Mostra ou esconde um elemento. Além da classe USS, define o display direto no
+    /// elemento: o UI Builder grava "display: none/flex" dentro do UXML (estilo inline),
+    /// e um estilo inline vence qualquer regra de classe, o que deixava as telas travadas.
+    /// </summary>
+    static void SetShown(VisualElement element, bool shown, string className = "active")
+    {
+        if (element == null) return;
+        element.EnableInClassList(className, shown);
+        element.style.display = shown ? DisplayStyle.Flex : DisplayStyle.None;
+    }
+
     void ApplyScreen()
     {
         foreach (var pair in ScreenNames)
-            _app.Q(pair.Value)?.EnableInClassList("active", pair.Key == _vm.Screen);
+            SetShown(_app.Q(pair.Value), pair.Key == _vm.Screen);
 
         if (FirstFocus.TryGetValue(_vm.Screen, out var buttonName))
             FocusLater(buttonName);
@@ -338,8 +367,8 @@ public class AppView : MonoBehaviour
 
     void ApplyOverlay()
     {
-        _app.Q("overlay-pause")?.EnableInClassList("active", _vm.Overlay == OverlayId.Pause);
-        _app.Q("overlay-quit")?.EnableInClassList("active", _vm.Overlay == OverlayId.Quit);
+        SetShown(_app.Q("overlay-pause"), _vm.Overlay == OverlayId.Pause);
+        SetShown(_app.Q("overlay-quit"), _vm.Overlay == OverlayId.Quit);
 
         // Na janela de saída o foco começa em "Não" (opção segura).
         if (_vm.Overlay == OverlayId.Pause) FocusLater("btn-resume");
@@ -407,16 +436,16 @@ public class AppView : MonoBehaviour
 
     void ApplyMiniGame()
     {
-        _app.Q("minigame-money")?.EnableInClassList("active", _vm.CurrentMiniGame == MiniGameId.Money);
-        _app.Q("minigame-code")?.EnableInClassList("active", _vm.CurrentMiniGame == MiniGameId.Code);
-        _app.Q("minigame-words")?.EnableInClassList("active", _vm.CurrentMiniGame == MiniGameId.Words);
+        SetShown(_app.Q("minigame-money"), _vm.CurrentMiniGame == MiniGameId.Money);
+        SetShown(_app.Q("minigame-code"), _vm.CurrentMiniGame == MiniGameId.Code);
+        SetShown(_app.Q("minigame-words"), _vm.CurrentMiniGame == MiniGameId.Words);
     }
 
     void ApplyFeedback()
     {
         var label = _app.Q("game-feedback");
         if (label == null) return;
-        label.EnableInClassList("show", _vm.FeedbackKind != FeedbackKind.None);
+        SetShown(label, _vm.FeedbackKind != FeedbackKind.None, "show");
         label.EnableInClassList("feedback-ok", _vm.FeedbackKind == FeedbackKind.Ok);
         label.EnableInClassList("feedback-error", _vm.FeedbackKind == FeedbackKind.Error);
     }
@@ -441,14 +470,15 @@ public class AppView : MonoBehaviour
     void StartLoading()
     {
         // Troque por progresso real, por exemplo AsyncOperation.progress.
-        _app.schedule.Execute(() => _vm.LoadingProgress += 0.02f)
-            .Every(40)
-            .Until(() => _vm.LoadingProgress >= 1f);
-
+        // Um único temporizador: sobe a barra e, ao chegar a 100%, abre o menu.
         _app.schedule.Execute(() =>
         {
-            if (_vm.Screen == ScreenId.Loading) _vm.FinishLoading();
-        }).StartingIn(2200);
+            _vm.LoadingProgress += 0.02f;
+            if (_vm.LoadingProgress >= 0.999f && _vm.Screen == ScreenId.Loading)
+                _vm.FinishLoading();
+        })
+        .Every(40)
+        .Until(() => _vm.Screen != ScreenId.Loading);
     }
 
     void QuitApplication()
