@@ -5,15 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-// =====================================================================
-// AppView.cs
-// Liga o UXML (UI_Idosos.uxml) ao AppViewModel (jogo de funcionário de mercado).
-//  - Textos, largura da barra e valores: DATA BINDING (SetBinding).
-//  - Troca de telas, painéis e classes USS, e botões ativos/inativos: reação ao
-//    evento Changed do ViewModel (classes não são bindáveis).
-//  - Cliques: Button.clicked chama métodos do ViewModel.
-// Requer Unity 6 (6000.0) ou superior.
-// =====================================================================
+
 
 [RequireComponent(typeof(UIDocument))]
 public class AppView : MonoBehaviour
@@ -41,7 +33,7 @@ public class AppView : MonoBehaviour
         { ScreenId.Result, "screen-result" },
     };
 
-    // Primeiro botão a receber foco em cada tela (teclado e controle)
+
     static readonly Dictionary<ScreenId, string> FirstFocus = new()
     {
         { ScreenId.Menu, "btn-play" },
@@ -54,10 +46,7 @@ public class AppView : MonoBehaviour
         { ScreenId.Result, "btn-again" },
     };
 
-    // =====================================================================
-    // Ciclo de vida
-    // O componente UIDocument deve ficar ACIMA deste script no Inspector.
-    // =====================================================================
+ 
     void OnEnable()
     {
         var doc = GetComponent<UIDocument>();
@@ -110,9 +99,7 @@ public class AppView : MonoBehaviour
         _vm.Save();
     }
 
-    // =====================================================================
-    // 1. DATA BINDINGS (ViewModel -> elementos)
-    // =====================================================================
+    
     void CreateBindings()
     {
         // Carregamento
@@ -216,9 +203,7 @@ public class AppView : MonoBehaviour
         return element;
     }
 
-    // =====================================================================
-    // 2. CLIQUES (elementos -> ViewModel)
-    // =====================================================================
+    
     void WireButtons()
     {
         // Menu
@@ -309,9 +294,6 @@ public class AppView : MonoBehaviour
         button.clicked += action;
     }
 
-    // =====================================================================
-    // 3. REAÇÕES A MUDANÇAS (classes USS, foco, botões ativos)
-    // =====================================================================
     void OnViewModelChanged(string property)
     {
         switch (property)
@@ -370,7 +352,7 @@ public class AppView : MonoBehaviour
         SetShown(_app.Q("overlay-pause"), _vm.Overlay == OverlayId.Pause);
         SetShown(_app.Q("overlay-quit"), _vm.Overlay == OverlayId.Quit);
 
-        // Na janela de saída o foco começa em "Não" (opção segura).
+        
         if (_vm.Overlay == OverlayId.Pause) FocusLater("btn-resume");
         else if (_vm.Overlay == OverlayId.Quit) FocusLater("btn-quit-no");
     }
@@ -464,13 +446,9 @@ public class AppView : MonoBehaviour
         _app.schedule.Execute(() => _app.Q<Button>(buttonName)?.Focus()).StartingIn(50);
     }
 
-    // =====================================================================
-    // Carregamento (simulado) e saída
-    // =====================================================================
+   
     void StartLoading()
     {
-        // Troque por progresso real, por exemplo AsyncOperation.progress.
-        // Um único temporizador: sobe a barra e, ao chegar a 100%, abre o menu.
         _app.schedule.Execute(() =>
         {
             _vm.LoadingProgress += 0.02f;

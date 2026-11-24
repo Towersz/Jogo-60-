@@ -5,21 +5,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
-// =====================================================================
-// AppViewModel.cs
-// Estado e regras do jogo "funcionário do mercado". Não conhece nenhum
-// elemento visual.
-// Cada propriedade marcada com [CreateProperty] pode ser ligada a um
-// elemento do UXML por data binding (Unity 6 ou superior).
-// Quando o valor muda, Notify() avisa a interface e ela se atualiza sozinha.
-//
-// Vocabulário do jogo
-//   fase            -> dia de trabalho (turno)
-//   3 minigames     -> 3 clientes por turno, cada um num posto:
-//                      Caixa (dinheiro), Balança (código), Etiquetas (palavras)
-//   vidas           -> clientes atendidos (só soma, nunca perde)
-//   mercado (loja)  -> loja do funcionário, onde se gasta as moedas
-// =====================================================================
 
 public enum ScreenId { Loading, Menu, Profile, Settings, Market, Levels, LevelInfo, Game, Result }
 public enum OverlayId { None, Pause, Quit }
@@ -50,7 +35,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
     public const int TotalLevels = 6;
     const int MiniGamesPerMatch = 3;
 
-    // Etiquetas de preço: nomes de produtos com 4 letras (a interface tem 4 casas)
+
     static readonly (string word, string hint)[] WordBank =
     {
         ("OVOS", "Vêm da galinha"),
@@ -61,10 +46,10 @@ public class AppViewModel : INotifyBindablePropertyChanged
         ("SOPA", "Prato quente de colher"),
     };
 
-    // Produtos pesados na balança
+    
     static readonly string[] Products = { "a banana", "o arroz", "o feijão", "o café", "o queijo", "o tomate" };
 
-    // ---------- Infraestrutura de notificação ----------
+   
     /// <summary>Usado pelo sistema de data binding do UI Toolkit.</summary>
     public event EventHandler<BindablePropertyChangedEventArgs> propertyChanged;
 
@@ -81,7 +66,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
 
     void Notify(string property)
     {
-        // Um erro na reação da tela é mostrado no Console, mas não trava o resto do jogo.
+        
         try { Changed?.Invoke(property); }
         catch (Exception e) { Debug.LogException(e); }
 
@@ -97,14 +82,13 @@ public class AppViewModel : INotifyBindablePropertyChanged
         return true;
     }
 
-    // ---------- Navegação ----------
+
     ScreenId _screen = ScreenId.Loading;
     OverlayId _overlay = OverlayId.None;
     public ScreenId Screen { get => _screen; private set => Set(ref _screen, value, nameof(Screen)); }
     public OverlayId Overlay { get => _overlay; private set => Set(ref _overlay, value, nameof(Overlay)); }
     public FlowVersion Flow { get; }
 
-    // ---------- Funcionário e economia ----------
     string _playerName = "Jogador";
     int _coins = 120;
     int _customers;
@@ -170,7 +154,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     public string LevelInfoDesc =>
         $"No dia {_selectedLevel} você atende 3 clientes, um de cada vez: no caixa, na balança e nas etiquetas. Leve o tempo que precisar.";
 
-    // ---------- Carregamento ----------
     float _loading;
 
     public float LoadingProgress
@@ -182,7 +165,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public StyleLength LoadingBarWidth => new StyleLength(Length.Percent(_loading * 100f));
     [CreateProperty] public string LoadingPercentText => $"{Mathf.RoundToInt(_loading * 100f)}%";
 
-    // ---------- Configurações ----------
+   
     bool _soundOn = true;
     bool _musicOn = true;
     TextScale _textScale = TextScale.Normal;
@@ -208,7 +191,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public string SoundText => _soundOn ? "Ligado" : "Desligado";
     [CreateProperty] public string MusicText => _musicOn ? "Ligada" : "Desligada";
 
-    // ---------- Loja do funcionário ----------
+
     string _marketMessage = "";
     public readonly ShopItem[] ShopItems;
 
@@ -219,7 +202,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         private set => Set(ref _marketMessage, value, nameof(MarketMessage));
     }
 
-    // ---------- Turno (partida) ----------
+
     int _step;
     int _mistakes;
     int _matchId;
@@ -234,7 +217,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty]
     public string GameInstruction => $"Cliente {_step + 1} de {MiniGamesPerMatch} ({_station}). {_instructionExtra}";
 
-    // Feedback de acerto/erro
     string _feedback = "";
     FeedbackKind _feedbackKind = FeedbackKind.None;
     int _feedbackToken;
@@ -242,7 +224,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public string Feedback { get => _feedback; private set => Set(ref _feedback, value, nameof(Feedback)); }
     public FeedbackKind FeedbackKind { get => _feedbackKind; private set => Set(ref _feedbackKind, value, nameof(FeedbackKind)); }
 
-    // Posto: Caixa (troco e total da compra)
+    
     string _moneyQuestion = "";
     readonly int[] _moneyAnswers = new int[3];
     int _moneyCorrect;
@@ -252,7 +234,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public string MoneyAnswer2 => $"R$ {_moneyAnswers[1]},00";
     [CreateProperty] public string MoneyAnswer3 => $"R$ {_moneyAnswers[2]},00";
 
-    // Posto: Balança (código do produto)
     string _codeTarget = "";
     string _code = "";
 
@@ -261,7 +242,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public string CodeSlot3 => Slot(_code, 2);
     [CreateProperty] public string CodeSlot4 => Slot(_code, 3);
 
-    // Posto: Etiquetas (nome do produto)
     string _wordTarget = "";
     string _wordHint = "";
     string _word = "";
@@ -281,7 +261,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     /// <summary>Bit i ligado = letra i já usada (a View desativa o botão).</summary>
     public int TileUsedMask { get => _tileMask; private set => Set(ref _tileMask, value, nameof(TileUsedMask)); }
 
-    // Resultado do turno
     string _resultTitle = "Turno concluído!";
     string _resultStars = "";
     string _resultCoins = "";
@@ -292,9 +271,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
     [CreateProperty] public string ResultCoins { get => _resultCoins; private set => Set(ref _resultCoins, value, nameof(ResultCoins)); }
     [CreateProperty] public string ResultCustomers { get => _resultCustomers; private set => Set(ref _resultCustomers, value, nameof(ResultCustomers)); }
 
-    // =====================================================================
-    // Construção e persistência
-    // =====================================================================
     public AppViewModel(FlowVersion flow)
     {
         Flow = flow;
@@ -331,14 +307,12 @@ public class AppViewModel : INotifyBindablePropertyChanged
         PlayerPrefs.Save();
     }
 
-    // =====================================================================
-    // Comandos de navegação
-    // =====================================================================
+  
     public void FinishLoading() => Go(ScreenId.Menu);
 
     public void Go(ScreenId screen)
     {
-        _matchId++; // cancela ações agendadas do turno anterior
+        _matchId++; 
         Overlay = OverlayId.None;
         if (screen == ScreenId.Market) MarketMessage = "";
         Screen = screen;
@@ -378,7 +352,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         StartMatch();
     }
 
-    // ---------- Pausa e saída ----------
+    
     public void PauseGame() { if (Screen == ScreenId.Game) Overlay = OverlayId.Pause; }
     public void ResumeGame() => Overlay = OverlayId.None;
 
@@ -396,12 +370,12 @@ public class AppViewModel : INotifyBindablePropertyChanged
         QuitRequested?.Invoke();
     }
 
-    // ---------- Configurações ----------
+   
     public void ToggleSound() => SoundOn = !_soundOn;
     public void ToggleMusic() => MusicOn = !_musicOn;
     public void SetTextScale(TextScale scale) => TextScale = scale;
 
-    // ---------- Loja do funcionário ----------
+    
     public void Buy(int index)
     {
         if (index < 0 || index >= ShopItems.Length) return;
@@ -416,12 +390,9 @@ public class AppViewModel : INotifyBindablePropertyChanged
         Coins = _coins - item.Price;
         MarketMessage = $"Compra feita: {item.Name}!";
         Save();
-        // Aqui você pode registrar o item no inventário do funcionário.
+        
     }
 
-    // =====================================================================
-    // Turno
-    // =====================================================================
     public void StartMatch()
     {
         _mistakes = 0;
@@ -522,7 +493,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         else Wrong("Quase! Confira a conta de novo.");
     }
 
-    // ---------- Posto: Balança ----------
+    
     public void PressKey(int digit)
     {
         if (_locked || CurrentMiniGame != MiniGameId.Code || _code.Length >= 4) return;
@@ -557,7 +528,6 @@ public class AppViewModel : INotifyBindablePropertyChanged
         }
     }
 
-    // ---------- Posto: Etiquetas ----------
     public void PressTile(int index)
     {
         if (_locked || CurrentMiniGame != MiniGameId.Words) return;
@@ -588,7 +558,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         NotifyWord();
     }
 
-    // ---------- Acerto, erro e avanço ----------
+   
     void Correct()
     {
         _locked = true;
@@ -597,7 +567,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         int id = _matchId;
         Delay(1200, () =>
         {
-            if (id != _matchId) return; // turno cancelado ou reiniciado
+            if (id != _matchId) return; 
             ClearFeedback();
             _step++;
             if (_step >= MiniGamesPerMatch) FinishMatch();
@@ -605,7 +575,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         });
     }
 
-    // Erros não tiram nada do jogador: só contam para a avaliação (estrelas).
+    
     void Wrong(string message)
     {
         _mistakes++;
@@ -652,9 +622,7 @@ public class AppViewModel : INotifyBindablePropertyChanged
         Go(ScreenId.Result);
     }
 
-    // =====================================================================
-    // Auxiliares
-    // =====================================================================
+   
     void NotifyCode()
     {
         Notify(nameof(CodeSlot1));
